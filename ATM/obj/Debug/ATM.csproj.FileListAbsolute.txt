@@ -1,0 +1,13 @@
+C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\ATM.exe
+C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\ATM.pdb
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.csprojAssemblyReference.cache
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM_MarkupCompile.cache
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM_MarkupCompile.lref
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.g.resources
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.Properties.Resources.resources
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.csproj.GenerateResource.cache
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.exe
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\ATM.pdb
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\MainWindow.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\App.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\MainWindow.baml
