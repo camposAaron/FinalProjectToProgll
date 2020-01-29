@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ATM.Forms.AdminLogin"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ATM.Forms"
+             mc:Ignorable="d" 
+             d:DesignHeight="295" d:DesignWidth="490">
+
+    <Grid  Margin="0,0,10,5" Background="Azure" materialDesign:ShadowAssist.ShadowEdges="Top">
+        <StackPanel Orientation="Vertical" Margin="80 50 0 0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Introduzca su credencial de administrador:"
+                           FontSize="18" Style="{DynamicResource MaterialDesignHeadline5TextBlock}"
+                                        />
+            </StackPanel>
+
+            <StackPanel x:Name="UsrAdminControl" Orientation="Horizontal" Margin=" 0 20 0 0 " >
+
+                <materialDesign:PackIcon Kind="Key" Margin="0 10 0 0"
+                      Foreground="{Binding ElementName=txtPass, Path=BorderBrush}" VerticalAlignment="Center"/>
+                <PasswordBox x:Name="txtPass" Width="300" materialDesign:HintAssist.Hint=" Contraseña"
+                             materialDesign:HintAssist.IsFloating="True" Margin="5 0 0 0"  />
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="130 30 0 0 " HorizontalAlignment="left">
+                <Button HorizontalAlignment="Left"  Content="Iniciar"
+                        Background="#1A3970" BorderBrush="#FF1A3970" 
+                        materialDesign:ButtonAssist.CornerRadius="5"
+                        Click="ButtonInit_Click"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Name="ValidateLabel" Foreground="#E81123" Text="{x:Null}" FontWeight="DemiBold"
+                           Margin="5 23 0 0"/>
+            </StackPanel>
+
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

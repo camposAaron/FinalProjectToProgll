@@ -10,5 +10,6 @@ namespace ATM.IDAO
     interface ClienteIDao : IDao<Cliente>
     {
         List<Cliente> FindById(String id);
+        bool ValidateUser(String NumberAccount, String password);
     }
 }

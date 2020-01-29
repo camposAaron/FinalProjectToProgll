@@ -85,7 +85,7 @@ namespace ATM.IDaoImpl
             lsStream.Close();
         }
 
-
+        //Buscar por id
         public List<Cliente> FindById(string id)
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -109,5 +109,30 @@ namespace ATM.IDaoImpl
         {
             throw new NotImplementedException();
         }
+
+
+
+        //Este metodo se usa para saber si un usuario esta registrado 
+      
+        public bool ValidateUser(string NumberAccount, string pin)
+        {
+            bool flat = false;
+            List<Cliente> clientes = FindAll();
+            foreach(Cliente c in clientes)
+            {
+                if((c.NumeroCuenta.Equals(NumberAccount) && (c.Pin.Equals(pin)))){
+                    flat = true;
+                }
+                else
+                {
+                    flat = false;
+                }
+
+              
+            }
+
+            return flat;
+        }
+
     }
 }
