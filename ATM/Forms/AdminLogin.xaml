@@ -13,7 +13,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ATM.Forms"
              mc:Ignorable="d" 
-             d:DesignHeight="295" d:DesignWidth="490">
+             d:DesignHeight="295" d:DesignWidth="490" KeyDown="UserControl_KeyDown">
 
     <Grid  Margin="0,0,10,5" Background="Azure" materialDesign:ShadowAssist.ShadowEdges="Top">
         <StackPanel Orientation="Vertical" Margin="80 50 0 0">

@@ -1,4 +1,6 @@
-﻿<UserControl x:Class="ATM.Forms.UserLogin"
+﻿<UserControl 
+     
+     x:Class="ATM.Forms.UserLogin"
      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"

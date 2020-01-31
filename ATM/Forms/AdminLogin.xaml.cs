@@ -1,18 +1,10 @@
-﻿using ATM.IDaoImpl;
+﻿using ATM.Forms.adminForms;
+using ATM.Properties;
+using ATM.IDaoImpl;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace ATM.Forms
 {
@@ -22,7 +14,9 @@ namespace ATM.Forms
     public partial class AdminLogin : UserControl
     {
         AdminAcces acces = new AdminAcces();
-         
+  
+
+       
         public AdminLogin()
         {
             InitializeComponent();
@@ -30,23 +24,47 @@ namespace ATM.Forms
 
         }
 
+       
+
         private void ButtonInit_Click(object sender, RoutedEventArgs e)
         {
             String pseudoPassword = txtPass.Password;
-           
+        
+
             if (pseudoPassword.Equals(acces.DeserializePass()))
             {
+                AdminForm admin = new AdminForm();
+
                 MessageBox.Show("Contrase;a correcta", "Buena dog");
+
+                //obtiene la ventana principal, para asi cerrarla
+                MainWindow log =(ATM.MainWindow) Application.Current.MainWindow; 
+
+                log.Close();
+
+                admin.ShowDialog();
+
+                
+
+            
+           
+            
             }
             else
             {
 
                 ValidateLabel.Text = "Contraseña incorrecta, por favor intente de nuevo";
+             
             }
 
+           
+       
 
+        }
 
-
+        private void UserControl_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            
         }
     }
 }

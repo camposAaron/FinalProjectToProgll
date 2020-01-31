@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\jos_a\source\repos\ATM\ATM\App.xaml
-3-1977148118
+4-202858259
 
-14-1439660516
+15322108172
 151469276180
-Forms\AdminLogin.xaml;Forms\UserLogin.xaml;Login.xaml;
+Forms\adminForms\AdminForm.xaml;Forms\AdminLogin.xaml;Forms\UserLogin.xaml;Login.xaml;
 
 False
 

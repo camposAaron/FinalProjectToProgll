@@ -41,11 +41,15 @@ namespace ATM.Forms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-             bool  flat  =  imp.ValidateUser(txtUsuario.Text, txtPin.Password);
+            bool  flat  =  imp.ValidateUser(txtUsuario.Text, txtPin.Password);
+          
             if (flat)
             {
-                //sigues aqui
+           
                 MessageBox.Show("Exito");
+                MainWindow log = (ATM.MainWindow)Application.Current.MainWindow;
+                log.Close();
+                //sigues aqui
             }
             else
             {

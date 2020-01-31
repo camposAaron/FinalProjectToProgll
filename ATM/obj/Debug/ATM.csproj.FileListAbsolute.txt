@@ -22,3 +22,5 @@ C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\AdminLogin.g.cs
 C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Login.g.cs
 C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\AdminLogin.baml
 C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Login.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\adminForms\AdminForm.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\adminForms\AdminForm.baml

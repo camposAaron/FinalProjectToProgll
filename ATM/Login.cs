@@ -12,14 +12,18 @@ namespace ATM
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public  partial class MainWindow : Window
     {
         ClienteImplements impl = new ClienteImplements();
-      
-        public MainWindow()
+
+        AdminLogin admin = new AdminLogin();
+
+        public  MainWindow()
         {
             InitializeComponent();
             GridLog.Children.Add(new UserLogin());
+     
+
         }
 
         private void Border_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -29,7 +33,9 @@ namespace ATM
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+
+            Application.Current.Shutdown(); 
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -56,11 +62,16 @@ namespace ATM
                 case 2:
                     GridLog.Children.Clear();
                     GridLog.Children.Add(new AdminLogin());
+                   
                     break;
             }
 
         }
 
+
+
+
+      
     }
 }
 
