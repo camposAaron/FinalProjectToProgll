@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="ATM.Forms.adminForms.VerUsuariosControl"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ATM.Forms.adminForms"
+             mc:Ignorable="d" 
+             d:DesignHeight="547" d:DesignWidth="800">
+    <Grid x:Name="GridVerUsers" Background="#E0EEEF" Width="690" Height="547">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="370*"/>
+            <RowDefinition Height="57*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+
+            <materialDesign:ColorZone Background="#4B5F83" VerticalAlignment="Bottom" Height="40">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Control de usuarios Banco WPF" FontSize="20" VerticalAlignment="Center" 
+                            HorizontalAlignment="Center"   Foreground="Azure"
+                            TextWrapping="WrapWithOverflow" Margin="71,0"/>
+                </StackPanel>
+            </materialDesign:ColorZone>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 10 0 0">
+                <materialDesign:PackIcon Kind="User" Margin="60 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="FileFindOutline"  Margin="0 0 0 0" VerticalAlignment="Center"/>
+                <Label Content="Buscar Usuario por:"  Margin="10 0 0 0" VerticalAlignment="Center" FontSize="15" />
+                <ComboBox Name="ComboBoxTipoBuscar" Height="25" Width="150" SelectedIndex="1" Margin="10 0 0 0" SelectionChanged="ComboBoxTipoBuscar_SelectionChanged">
+                    <ComboBoxItem Content="Numero de cedula"/>
+                    <ComboBoxItem Content="Numero de cuenta"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal"> 
+                <TextBox x:Name="TxtBuscar"  Width="300"  Margin="80 0 0 10" materialDesign:HintAssist.Hint="Escribe aqui"/>
+                <Button x:Name="btnBuscar" Content="Buscar" Margin="30 0" Background="#4B5F83" Click="btnBuscar_Click" BorderBrush="#4B5F83"/>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid Name="dgUsers" Grid.Row="2" IsReadOnly="True" BorderBrush="#FF4B5F83">
+          
+            <DataGrid.Columns>
+            
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="30 0 0 0">
+            <Button Name="btnEditar" materialDesign:ButtonAssist.CornerRadius="5" Background="#4B5F83"  BorderBrush="#4B5F83" Margin="20 0">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Edit"/>
+                    <TextBlock Text="Editar:" Margin="10 0"/>
+                    <TextBlock Name="labelConfirmar" Text="off" Margin="0 0"/>
+                </StackPanel>
+                
+            </Button>
+
+            <Button Name="btnDelete" materialDesign:ButtonAssist.CornerRadius="5" Background="#E81123"  BorderBrush="#4B5F83" Margin="20 0 ">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Delete"/>
+                    <TextBlock Text="Eliminar" Margin="10 0"/>
+                    
+                </StackPanel>
+
+            </Button>
+
+
+            <Button Name="btnGuardar" materialDesign:ButtonAssist.CornerRadius="5" Background="#1A3970"  BorderBrush="#4B5F83" Margin="20 0 ">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ContentSave"/>
+                    <TextBlock Text="Guardar" Margin="10 0"/>
+
+                </StackPanel>
+
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+
+
+
+</UserControl>

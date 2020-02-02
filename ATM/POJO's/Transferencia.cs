@@ -38,9 +38,9 @@ namespace ATM.POJO_s
 
         public string NumeroCuenta { get => numeroCuenta; set => numeroCuenta = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-        public double Entrada1 { get => entrada; set => entrada = value; }
-        public double Salida1 { get => salida; set => salida = value; }
-        public double Saldo1 { get => saldo; set => saldo = value; }
+        public double Entrada { get => entrada; set => entrada = value; }
+        public double Salida { get => salida; set => salida = value; }
+        public double Saldo{ get => saldo; set => saldo = value; }
         public string FechaTransaccion { get => fechaTransaccion; set => fechaTransaccion = value; }
         public string HoraTransaccion { get => horaTransaccion; set => horaTransaccion = value; }
     }
