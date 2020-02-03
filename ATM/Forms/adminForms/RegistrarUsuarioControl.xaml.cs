@@ -60,9 +60,17 @@ namespace ATM.Forms.adminForms
                         t.Saldo = monto;
 
                         transferenciaImplements.Save(t);
-                         
 
-                }
+                        MessageBox.Show("Nombres      : "+c.Nombre+"\n " +
+                                        "Apellidos    : "+c.Apellido+"\n"+
+                                        "Numero cuenta: "+c.NumeroCuenta+"\n"+
+                                        "Numero PIN   : "+c.Pin+"\n"
+                                        , "Usuario agregado correctamente!",MessageBoxButton.OK,MessageBoxImage.Information);
+
+
+
+
+                    }
                 else
                 {
                     txtNumeroCedula.Text = "";

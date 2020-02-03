@@ -44,3 +44,15 @@ C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.
 C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\jos_a\source\repos\ATM\ATM\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\UserForm.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\UserForm.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlDepositar.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlDepositar.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlMenu.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlMenu.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlRetirar.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlRetirar.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlBalance.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlBalance.baml
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlHistorial.g.cs
+C:\Users\jos_a\source\repos\ATM\ATM\obj\Debug\Forms\UserForms\ControlHistorial.baml

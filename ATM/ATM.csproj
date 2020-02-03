@@ -94,6 +94,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\UserForms\ControlBalance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserForms\ControlDepositar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserForms\ControlHistorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserForms\ControlMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserForms\ControlRetirar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\UserForms\UserForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\UserLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +141,24 @@
     </Compile>
     <Compile Include="Forms\AdminLogin.xaml.cs">
       <DependentUpon>AdminLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ControlBalance.xaml.cs">
+      <DependentUpon>ControlBalance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ControlDepositar.xaml.cs">
+      <DependentUpon>ControlDepositar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ControlHistorial.xaml.cs">
+      <DependentUpon>ControlHistorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ControlMenu.xaml.cs">
+      <DependentUpon>ControlMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\ControlRetirar.xaml.cs">
+      <DependentUpon>ControlRetirar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForms\UserForm.xaml.cs">
+      <DependentUpon>UserForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserLogin.xaml.cs">
       <DependentUpon>UserLogin.xaml</DependentUpon>

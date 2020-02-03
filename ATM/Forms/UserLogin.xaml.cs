@@ -1,4 +1,6 @@
-﻿using ATM.IDaoImpl;
+﻿using ATM.Forms.UserForms;
+using ATM.IDaoImpl;
+using ATM.POJO_s;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,15 +43,19 @@ namespace ATM.Forms
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool  flat  =  imp.ValidateUser(txtUsuario.Text, txtPin.Password);
+            Cliente  c  =  imp.ValidateUser(txtUsuario.Text, txtPin.Password);
           
-            if (flat)
+            if (c != null)
             {
-           
+                UserForm userForm = new UserForm();
+
                 MessageBox.Show("Exito");
                 MainWindow log = (ATM.MainWindow)Application.Current.MainWindow;
                 log.Close();
-                //sigues aqui
+                userForm.setCliente(c);
+                userForm.ShowDialog();
+               
+
             }
             else
             {

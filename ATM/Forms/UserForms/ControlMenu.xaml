@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="ATM.Forms.UserForms.ControlMenu"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ATM.Forms.UserForms"
+             mc:Ignorable="d"
+             d:DesignHeight="337" d:DesignWidth="580">
+    
+
+       
+ 
+        
+                <!-- grid principal del visor-->
+                <Grid x:Name="gridMenu">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="112"/>
+                        <RowDefinition Height="113*"/>
+                        <RowDefinition Height="112*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="290"/>
+                        <ColumnDefinition Width="290"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Depositar-->
+                    <Button x:Name="btnDepositar" Click="btnDepositar_Click" Grid.Column="0" Grid.Row="0" Margin="30 0 30 0" Background="Green" BorderBrush="AntiqueWhite"  materialDesign:ButtonAssist.CornerRadius="5" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Depositar" Margin="10 0 0 0" FontSize="20"/>
+                            <materialDesign:PackIcon Kind="KeyboardArrowUp" />
+                            <materialDesign:PackIcon Kind="Dollar"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--Retirar-->
+                    <Button x:Name="btnRetirar" Click="btnRetirar_Click" Grid.Column="1" Grid.Row="0" Margin="30 0 30 0" Background="Green" BorderBrush="AntiqueWhite" materialDesign:ButtonAssist.CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Retirar" Margin="10 0 0 0" FontSize="20"/>
+                            <materialDesign:PackIcon Kind="KeyboardArrowDown" />
+                            <materialDesign:PackIcon Kind="Dollar"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--Balance-->
+                    <Button  x:Name="btnBalance" Click="btnBalance_Click" Grid.Column="0" Grid.Row="1" Margin="30 0 30 0" Background="#1A3970" BorderBrush="AntiqueWhite" materialDesign:ButtonAssist.CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Balance" Margin="10 0 0 0" FontSize="20"/>
+                            <materialDesign:PackIcon Kind="AccountBalance" VerticalAlignment="Center" Margin="10 0 0 0"/>
+                            <materialDesign:PackIcon Kind="Dollar"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--Historial-->
+                    <Button x:Name="btnHistorial" Click="btnHistorial_Click" Grid.Column="1" Grid.Row="1" Margin="30 0 30 0" Background="#1A3970" BorderBrush="AntiqueWhite" materialDesign:ButtonAssist.CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Historial" Margin="10 0 0 0" FontSize="20"/>
+                            <materialDesign:PackIcon Kind="History" VerticalAlignment="Center" Margin="10 0 0 0"/>
+                            <materialDesign:PackIcon Kind="Dollar"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--Cerrar sesion-->
+                    <Button x:Name="btncerrar" Click="btncerrar_Click" Grid.Column="0" Grid.Row="2" Margin="30 0 30 0" Background="#E81123" BorderBrush="AntiqueWhite" materialDesign:ButtonAssist.CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Cerrar sesion" Margin="10 0 0 0" FontSize="20"/>
+                            <materialDesign:PackIcon Kind="ExitRun" VerticalAlignment="Center" Margin="10 0 0 0"/>
+
+                        </StackPanel>
+                    </Button>
+
+
+                </Grid>
+
+
+
+
+
+     
+</UserControl>

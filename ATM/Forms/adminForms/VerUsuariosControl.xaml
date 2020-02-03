@@ -46,14 +46,17 @@
                 <materialDesign:PackIcon Kind="User" Margin="60 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <materialDesign:PackIcon Kind="FileFindOutline"  Margin="0 0 0 0" VerticalAlignment="Center"/>
                 <Label Content="Buscar Usuario por:"  Margin="10 0 0 0" VerticalAlignment="Center" FontSize="15" />
-                <ComboBox Name="ComboBoxTipoBuscar" Height="25" Width="150" SelectedIndex="1" Margin="10 0 0 0" SelectionChanged="ComboBoxTipoBuscar_SelectionChanged">
-                    <ComboBoxItem Content="Numero de cedula"/>
+                <ComboBox Name="ComboBoxTipoBuscar" Height="25" Width="150" SelectedIndex="1" Margin="10 0 0 0" >
                     <ComboBoxItem Content="Numero de cuenta"/>
+                    <ComboBoxItem Content="Numero de cedula"/>
                 </ComboBox>
             </StackPanel>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal"> 
                 <TextBox x:Name="TxtBuscar"  Width="300"  Margin="80 0 0 10" materialDesign:HintAssist.Hint="Escribe aqui"/>
+                <Button x:Name="iconClose" Background="{x:Null}" BorderBrush="{x:Null}" Click="iconClose_Click" >
+                    <materialDesign:PackIcon Kind="Close"   Foreground="{Binding ElementName=TxtBuscar, Path=BorderBrush}" />
+                </Button>
                 <Button x:Name="btnBuscar" Content="Buscar" Margin="30 0" Background="#4B5F83" Click="btnBuscar_Click" BorderBrush="#4B5F83"/>
             </StackPanel>
         </Grid>
@@ -65,8 +68,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="30 0 0 0">
-            <Button Name="btnEditar" materialDesign:ButtonAssist.CornerRadius="5" Background="#4B5F83"  BorderBrush="#4B5F83" Margin="20 0">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="80 0 0 0">
+            <Button Name="btnEditar" materialDesign:ButtonAssist.CornerRadius="5" Background="#4B5F83"  BorderBrush="#4B5F83" Margin="20 0"
+                    Click="btnEditar_Click">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Edit"/>
                     <TextBlock Text="Editar:" Margin="10 0"/>
@@ -75,7 +79,8 @@
                 
             </Button>
 
-            <Button Name="btnDelete" materialDesign:ButtonAssist.CornerRadius="5" Background="#E81123"  BorderBrush="#4B5F83" Margin="20 0 ">
+            <Button Name="btnDelete" materialDesign:ButtonAssist.CornerRadius="5" 
+                    Background="#E81123"  BorderBrush="#4B5F83" Margin="20 0 " Click="btnDelete_Click">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Delete"/>
                     <TextBlock Text="Eliminar" Margin="10 0"/>
@@ -85,7 +90,8 @@
             </Button>
 
 
-            <Button Name="btnGuardar" materialDesign:ButtonAssist.CornerRadius="5" Background="#1A3970"  BorderBrush="#4B5F83" Margin="20 0 ">
+            <Button Name="btnGuardar" materialDesign:ButtonAssist.CornerRadius="5" Background="#1A3970" 
+                    BorderBrush="#4B5F83" Margin="20 0 " Click="btnGuardar_Click">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ContentSave"/>
                     <TextBlock Text="Guardar" Margin="10 0"/>

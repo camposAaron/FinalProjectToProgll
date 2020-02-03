@@ -15,18 +15,18 @@ namespace ATM.IDaoImpl
     {
         ManejadorClientes mnj = new ManejadorClientes();
         string nombre = "clientes.dat";
-   
+
         public ClienteImplements()
         {
-          
+
         }
-             
+
         public bool Delete(string numeroCedula)
         {
             bool flat = false;
             try
             {
-               
+
                 BinaryFormatter formatter = new BinaryFormatter();
                 Stream lsStream = new FileStream(nombre, FileMode.Open, FileAccess.Read, FileShare.None);
                 mnj = (ManejadorClientes)formatter.Deserialize(lsStream);
@@ -43,14 +43,14 @@ namespace ATM.IDaoImpl
                 }
 
                 mnj.setClientes(clientes);
-                
+
                 lsStream = new FileStream(nombre, FileMode.Create, FileAccess.Write, FileShare.None);
                 formatter.Serialize(lsStream, mnj);  //serialisamos mnj con la nueva lista
                 lsStream.Close();
 
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
-               // Aqui un messagebox
+                // Aqui un messagebox
             }
 
             return flat;
@@ -65,22 +65,33 @@ namespace ATM.IDaoImpl
                 mnj = (ManejadorClientes)formatter.Deserialize(lsStream);
                 lsStream.Close();
             }
-            catch(FileNotFoundException ex)
+            catch (FileNotFoundException ex)
             {
                 //Aqui otro messageBox
             }
-           
+
             return mnj.getClientes();
 
         }
+
+        //guarda una coleccion conmpleta de datos 
+        public void setAll(List<Cliente> clientes)
+        {
+            Stream lsStream = new FileStream(nombre, FileMode.Create, FileAccess.Write, FileShare.None);
+            mnj.setClientes(clientes);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(lsStream, mnj);
+            lsStream.Close();
+        }
+
 
         public void Save(Cliente t)
         {
 
             Stream lsStream = new FileStream(nombre, FileMode.Create, FileAccess.Write, FileShare.None);
             mnj.AddCliente(t);
-          
-            BinaryFormatter  formatter = new BinaryFormatter();
+
+            BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(lsStream, mnj);
             lsStream.Close();
         }
@@ -113,26 +124,45 @@ namespace ATM.IDaoImpl
 
 
         //Este metodo se usa para saber si un usuario esta registrado 
-      
-        public bool ValidateUser(string NumberAccount, string pin)
-        {
-            bool flat = false;
-            List<Cliente> clientes = FindAll();
-            foreach(Cliente c in clientes)
-            {
-                if((c.NumeroCuenta.Equals(NumberAccount) && (c.Pin.Equals(pin)))){
-                    flat = true;
-                }
-                else
-                {
-                    flat = false;
-                }
 
+        public Cliente ValidateUser(string NumberAccount, string pin)
+        {
+
+            List<Cliente> clientes = FindAll();
+
+            foreach (Cliente c in clientes)
+            {
+                if ((c.NumeroCuenta.Equals(NumberAccount) && (c.Pin.Equals(pin)))) {
+                    return c;
+                }
               
             }
 
-            return flat;
+            return null;
+        }
+
+
+        public Cliente getCliente(string NumberAccount)
+        {
+
+            List<Cliente> clientes = FindAll();
+
+            foreach (Cliente c in clientes)
+            {
+                if (c.NumeroCuenta.Equals(NumberAccount))
+                {
+                    return c;
+                }
+               
+            }
+
+            return null;
+
         }
 
     }
+
+
 }
+
+

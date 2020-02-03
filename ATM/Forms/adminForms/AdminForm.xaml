@@ -14,7 +14,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ATM.Forms.adminForms"
         mc:Ignorable="d"
-        Title="AdminForm" Height="577" Width="890" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+        Title="AdminForm" Height="577" Width="890" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
 
 
     <Grid >
@@ -68,6 +68,13 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="eye" Height="32" Width="27"/>
                             <TextBlock Text="Ver usuarios" VerticalAlignment="Center" Margin="10 0 0 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem Height="45" Selected="ListViewItem_Selected_2"  >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ExitRun" Height="32" Width="27"/>
+                            <TextBlock Text="Cerrar sesion" VerticalAlignment="Center" Margin="10 0 0 0"/>
                         </StackPanel>
                     </ListViewItem>
 

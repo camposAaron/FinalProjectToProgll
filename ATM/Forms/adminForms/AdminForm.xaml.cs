@@ -41,5 +41,14 @@ namespace ATM.Forms.adminForms
             GridPrincipal.Children.Clear();
             GridPrincipal.Children.Add(new VerUsuariosControl());
         }
+
+        private void ListViewItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+
+
+
+        }
     }
 }
