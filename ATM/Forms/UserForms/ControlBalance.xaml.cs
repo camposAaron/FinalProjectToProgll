@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ATM.IDaoImpl;
+using ATM.POJO_s;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,10 @@ namespace ATM.Forms.UserForms
     /// </summary>
     public partial class ControlBalance : UserControl
     {
+        TransferenciaImplements transferenciaImplements = new TransferenciaImplements();
         private UserForm userForm;
         private ControlMenu controlMenu;
-
+       
         public ControlBalance()
         {
             InitializeComponent();
@@ -47,7 +50,30 @@ namespace ATM.Forms.UserForms
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
-            userForm.Identifier = 1;
+
+            VerBalance();
+      
+        }
+
+        public void  VerBalance()
+        {
+            
+            List<Transferencia> registrosUsuario = new List<Transferencia>();
+            List<Transferencia> transferencias = transferenciaImplements.FindAll();
+            Cliente usuario = userForm.Usuario;
+
+            foreach (Transferencia trans in transferencias)
+            {
+                if (usuario.NumeroCuenta.Equals(trans.NumeroCuenta))
+                {
+                    registrosUsuario.Add(trans);
+                }
+            }
+
+            var ultimo = registrosUsuario[registrosUsuario.Count - 1].Saldo; //obtiene el saldo de la ultima transaccion
+
+             txtBalance.Text = " " + ultimo;
+
         }
     }
 }

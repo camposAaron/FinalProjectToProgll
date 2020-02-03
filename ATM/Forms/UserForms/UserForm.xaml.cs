@@ -24,25 +24,28 @@ namespace ATM.Forms.UserForms
 
         Cliente usuario = new Cliente();
         ClienteImplements clienteImplements = new ClienteImplements();
-        private int identifier;
+        TransferenciaImplements transferenciaImplements = new TransferenciaImplements();
 
-        ControlBalance balance;
+       
+        //identificador de control
+        private int identifier;  
+
+
+        //Controles
+       
+      
         ControlDepositar depositar;
-        ControlHistorial historial;
         ControlRetirar retirar;
-
-
-
 
 
         private string numeroCuenta;
 
-       
-        
-        
-        
-        
+
+
+
+
         public int Identifier { get => identifier; set => identifier = value; }
+        internal Cliente Usuario { get => usuario; set => usuario = value; }
 
         public UserForm()
         {
@@ -57,8 +60,8 @@ namespace ATM.Forms.UserForms
 
         }
 
-        
 
+        //manejo de la ventana
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -69,6 +72,8 @@ namespace ATM.Forms.UserForms
             this.DragMove();
         }
 
+
+        /*UsersControllers setters*/
         internal void setControlDepositar(ControlDepositar controlDepositar)
         {
             depositar = controlDepositar;
@@ -80,6 +85,14 @@ namespace ATM.Forms.UserForms
             retirar = controlRetirar;
         }
 
+
+   
+
+
+
+
+
+        #region botones numericos
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
             
@@ -150,26 +163,6 @@ namespace ATM.Forms.UserForms
 
 
 
-        //boton cancel o borrar todo
-        private void btnC_Click(object sender, RoutedEventArgs e)
-        {
-            switch (identifier)
-            {
-
-
-                case 1:
-                    string passInputDeposito = "";
-                    depositar.txtDeposito.Text = passInputDeposito;
-
-                    break;
-                case 2:
-                    string passInputRetiro = "";
-                    retirar.txtRetiro.Text = passInputRetiro;
-                    break;
-
-
-            }
-        }
 
         private void btn4_Click(object sender, RoutedEventArgs e)
         {
@@ -235,45 +228,7 @@ namespace ATM.Forms.UserForms
         }
 
 
-        //boton clear
-
-        private void btnclr_Click(object sender, RoutedEventArgs e)
-        {
-            switch (identifier)
-            {
-
-
-                case 1:
-                    string passInputDeposito = depositar.txtDeposito.Text;
-                    try
-                    { 
-                        passInputDeposito = passInputDeposito.Remove(passInputDeposito.Length - 1);
-                    
-                    }catch(Exception ex)
-                    {
-
-                    }
-                    depositar.txtDeposito.Text = passInputDeposito;
-
-                    break;
-                case 2:
-                    string passInputRetiro = retirar.txtRetiro.Text;
-                    try
-                    {
-                        passInputRetiro = passInputRetiro.Remove(passInputRetiro.Length - 1);
-
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                     retirar.txtRetiro.Text = passInputRetiro;
-
-                    break;
-
-
-            }
-        }
+       
 
         private void btn7_Click(object sender, RoutedEventArgs e)
         {
@@ -360,14 +315,168 @@ namespace ATM.Forms.UserForms
             }
         }
 
+        #endregion
+
 
         private void btnE_Click(object sender, RoutedEventArgs e)
         {
             //ojooooooooo
+            switch (identifier)
+            {
+                case 1:
+
+                    validarDeposito();
+                    MessageBox.Show("Transferencia con exito","",MessageBoxButton.OK, MessageBoxImage.Information);
+                    break;
+               
+                case 2:
+                    ValidarRetiro();
+                     break;
+
+            }
+
+
+
+        }
+
+        public void validarDeposito()
+        {
+            double monto = Convert.ToDouble(depositar.txtDeposito.Text);
+            List<Transferencia> registroUsuario = new List<Transferencia>();
+            List<Transferencia>   transferencias = transferenciaImplements.FindAll();
+            
+
+            foreach(Transferencia trans in transferencias)
+            {
+                if (usuario.NumeroCuenta.Equals(trans.NumeroCuenta))
+                {
+                    registroUsuario.Add(trans);
+                }
+            }
+
+            var ultimo =  registroUsuario[registroUsuario.Count-1].Saldo;
+
+            Transferencia t = new Transferencia();
+            t.HoraTransaccion = DateTime.Now.ToString("h:mm:ss");
+            t.FechaTransaccion = DateTime.Now.ToString("dd/MM/yyyy");
+            t.NumeroCuenta = usuario.NumeroCuenta;
+            t.Tipo = "Deposito";
+            t.Entrada = monto;
+            t.Saldo =  ultimo + monto;
+
+            transferenciaImplements.Save(t);
+        }
+
+
+        public void ValidarRetiro()
+        {
+            double monto = Convert.ToDouble(retirar.txtRetiro.Text);
+            List<Transferencia> registrosUsuario = new List<Transferencia>();
+            List<Transferencia> transferencias = transferenciaImplements.FindAll();
+
+
+            foreach (Transferencia trans in transferencias)
+            {
+                if (usuario.NumeroCuenta.Equals(trans.NumeroCuenta))
+                {
+                    registrosUsuario.Add(trans);
+                }
+            }
+
+
+            var ultimo = registrosUsuario[registrosUsuario.Count - 1].Saldo; //obtiene el saldo de la ultima transaccion
+
+            if (monto < ultimo)
+            {
+                Transferencia t = new Transferencia();
+                t.HoraTransaccion = DateTime.Now.ToString("h:mm:ss");
+                t.FechaTransaccion = DateTime.Now.ToString("dd/MM/yyyy");
+                t.NumeroCuenta = usuario.NumeroCuenta;
+                t.Tipo = "Retiro";
+                t.Salida = monto;
+                t.Saldo = ultimo - monto;
+
+                transferenciaImplements.Save(t);
+                MessageBox.Show("Transferencia con exito", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                retirar.validateText.Text = "Saldo insuficiente!";
+            }
+
+        }
+
+
+        
 
 
 
 
+
+
+
+
+
+        //boton cancel o borrar todo
+        private void btnC_Click(object sender, RoutedEventArgs e)
+        {
+            switch (identifier)
+            {
+
+
+                case 1:
+                    string passInputDeposito = "";
+                    depositar.txtDeposito.Text = passInputDeposito;
+
+                    break;
+                case 2:
+                    string passInputRetiro = "";
+                    retirar.txtRetiro.Text = passInputRetiro;
+                    break;
+
+
+            }
+        }
+
+        //boton clear
+
+        private void btnclr_Click(object sender, RoutedEventArgs e)
+        {
+            switch (identifier)
+            {
+
+
+                case 1:
+                    string passInputDeposito = depositar.txtDeposito.Text;
+                    try
+                    {
+                        passInputDeposito = passInputDeposito.Remove(passInputDeposito.Length - 1);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    depositar.txtDeposito.Text = passInputDeposito;
+
+                    break;
+                case 2:
+                    string passInputRetiro = retirar.txtRetiro.Text;
+                    try
+                    {
+                        passInputRetiro = passInputRetiro.Remove(passInputRetiro.Length - 1);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    retirar.txtRetiro.Text = passInputRetiro;
+
+                    break;
+
+
+            }
         }
 
         public void setNumeroCuenta(String numeroCuenta)

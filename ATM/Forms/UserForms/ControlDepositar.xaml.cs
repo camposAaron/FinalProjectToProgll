@@ -22,7 +22,7 @@ namespace ATM.Forms.UserForms
     {
         UserForm userForm;
         ControlMenu controlMenu;
-
+    
         public ControlDepositar()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace ATM.Forms.UserForms
         {
             userForm.gridDinamico.Children.Clear();
             userForm.gridDinamico.Children.Add(controlMenu);
-
+           
         }
 
         public void setUserForm(UserForm userForm)

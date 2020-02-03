@@ -15,7 +15,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="337" d:DesignWidth="580">
    
-    <Grid Background="#FFE0EEEF">
+    <Grid Background="#FFE0EEEF" MouseEnter="Grid_MouseEnter">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>

@@ -60,9 +60,12 @@ namespace ATM.Forms.UserForms
             userForm.gridDinamico.Children.Clear();
             userForm.gridDinamico.Children.Add(balance);
 
+            
             /*Estos setter sirven para restablecer el menu*/
             balance.setControlMenu(this);
             balance.setUserForm(userForm);
+
+
         }
 
         private void btnHistorial_Click(object sender, RoutedEventArgs e)

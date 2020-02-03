@@ -14,7 +14,7 @@
      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
      xmlns:local="clr-namespace:ATM"
      mc:Ignorable="d"
-     Title="MainWindow" Height="415" Width="535" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+     Title="MainWindow" Height="415" Width="535" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize">
 
 
     <Grid Background="#E0EEEF">

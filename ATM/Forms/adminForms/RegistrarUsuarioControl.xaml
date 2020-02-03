@@ -15,7 +15,7 @@
              xmlns:local="clr-namespace:ATM.Forms.adminForms"
              mc:Ignorable="d" 
              d:DesignHeight="547" d:DesignWidth="760">
-    <Grid x:Name="GridRegistro" Background="#9BBFD7" Width="690" Height="547">
+    <Grid x:Name="GridRegistro" Background="#9BBFD7" Width="690" Height="547" >
         <Border Margin="25,28,35,32" BorderBrush="AliceBlue" Background="#E0EEEF" CornerRadius="30" materialDesign:HintAssist.FloatingScale="20" materialDesign:ShadowAssist.ShadowDepth="Depth4">
             <StackPanel Orientation="Vertical">
 

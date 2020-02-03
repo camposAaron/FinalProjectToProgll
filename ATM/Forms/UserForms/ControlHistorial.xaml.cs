@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ATM.IDaoImpl;
+using ATM.POJO_s;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +22,7 @@ namespace ATM.Forms.UserForms
     /// </summary>
     public partial class ControlHistorial : UserControl
     {
-
+        TransferenciaImplements transferencia = new TransferenciaImplements();
         UserForm userForm;
         ControlMenu controlMenu;
 
@@ -45,5 +47,21 @@ namespace ATM.Forms.UserForms
             this.controlMenu = controlMenu;
         }
 
+        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            List<Transferencia> registroUsuario = new List<Transferencia>();
+            List<Transferencia> transferencias = transferencia.FindAll();
+            Cliente usuario = userForm.Usuario;
+
+            foreach (Transferencia trans in transferencias)
+            {
+                if (usuario.NumeroCuenta.Equals(trans.NumeroCuenta))
+                {
+                    registroUsuario.Add(trans);
+                }
+            }
+
+            dgHistorial.ItemsSource = registroUsuario;
+        }
     }
 }
